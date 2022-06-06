@@ -1,7 +1,13 @@
-def call() {
+def call(repo, branch) {
+    steps {
 
-    sh "echo Hellos"
-
+        git(
+            url: "${repo}",
+            credentialsId: 'github_user',
+            branch: "${branch}"
+        )
+        
+    }
 }
 
   
